@@ -18,3 +18,17 @@ display: inline-block;
 .header{
     background-color: rgb(175, 174, 174) 
 }
+
+h1{
+    font-weight: bold;
+    font-size: large;
+}
+
+h2{
+    font-weight: bold;
+    font-size: xx-large;
+}
+
+.footer{
+    background-color: rgb(175, 174, 174) 
+}
