@@ -5,4 +5,52 @@
 {% block body %} 
 <h1> VTM Estimator </h1>
 <hr>
+
+    <h1>Area of Tank Top</h1>
+    <form oninput="x.value=parseFloat(pi.value)*parseFloat(Radius.value)*parseFloat(Radius.value)">
+        <label for="Pi">Pi:</label>
+        <input type="float" id="pi" value="3.14">
+        <label for="Radius">Radius:</label>
+        *<input type="float" id="Radius" name="Radius">
+        <label for="Radius">Radius:</label>
+        *<input type="float" id="Radius" name="Radius">
+        =<output name="x" for="pi*Radius*Radius"></output>
+        <input type="submit" id="submit" value="Submit" />
+    </form>
+    <hr>
+    <h1>Area of Tank Sides</h1>
+    <form oninput="x.value=parseFloat(num.value)*(parseFloat(pi.value)*(parseFloat(Radius.value)*parseFloat(Height.value)))">
+        <label for="number">Number:</label>
+        <input type="float" id="num" value="2">
+        *<label for="Pi">Pi:</label>
+        <input type="float" id="pi" value="3.14">
+        <label for="Radius">Radius:</label>
+        *<input type="float" id="Radius" name="Radius">
+        <label for="Height">Height:</label>
+        *<input type="float" id="Height" name="Height">
+        =<output name="x" for="pi*Radius*Radius"></output>
+        <input type="submit" id="submit" value="Submit" />
+    </form>
+    <hr>
+    <h1>Total Area</h1>
+    <form oninput="x.value=parseFloat(top.value)+(parseFloat(side.value)">
+        <label for="number">Top Area:</label>
+        <input type="float" id="toparea">
+        +<label for="sidearea">Side Area:</label>
+        <input type="float" id="pi">
+        =<output name="x" for="pi*Radius*Radius"></output>
+        <input type="submit" id="submit" value="Submit" />
+    </form>
+    <hr>
+    <h1>Total Area Inches to Square Feet</h1>
+    <form oninput="x.value=parseFloat(totalarea.value)/(parseFloat(numm.value)">
+        <label for="number">Total Area:</label>
+        <input type="float" id="totalarea">
+        /<label for="numm">Number:</label>
+        <input type="float" id="numm" value="144">
+        =<output name="x" for="pi*Radius*Radius"></output>
+        <input type="submit" id="submit" value="Submit" />
+    </form>
+    <hr>
+
 {% endblock %}

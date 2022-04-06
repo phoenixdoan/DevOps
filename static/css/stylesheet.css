@@ -32,3 +32,8 @@ h2{
 .footer{
     background-color: rgb(175, 174, 174) 
 }
+
+output {
+    display: inline;
+  }
+
