@@ -1,5 +1,6 @@
 body{
     background-color: white;
+    margin-bottom: 2.cm;
 }
 
 .photo {
@@ -8,4 +9,12 @@ body{
     img {
     width: auto; 
      max-height: 100%; 
+}
+
+.button1, .button2, .button3{
+display: inline-block;
+}
+
+.header{
+    background-color: rgb(175, 174, 174) 
 }
