@@ -2,85 +2,19 @@
 
 {% block title %} Tank Painting Estimate {% endblock %}
 
-{% block body %} 
+{% block body %}
 <h1> VTM Estimator </h1>
 <hr>
-
-    <h1>Area of Tank Top</h1>
-    <form oninput="x.value=parseFloat(pi.value)*parseFloat(Radius.value)*parseFloat(Radius.value)">
-        <label for="Pi">Pi:</label>
-        <input type="float" id="pi" value="3.14">
-        <label for="Radius">Radius:</label>
-        *<input type="float" id="Radius" name="Radius">
-        <label for="Radius">Radius:</label>
-        *<input type="float" id="Radius" name="Radius">
-        =<output name="x" for="pi*Radius*Radius"></output>
-        <input type="submit" id="submit" value="Submit" />
-    </form>
-    <hr>
-    <h1>Area of Tank Sides</h1>
-    <form oninput="x.value=parseFloat(num.value)*(parseFloat(pi.value)*(parseFloat(Radius.value)*parseFloat(Height.value)))">
-        <label for="number">Number:</label>
-        <input type="float" id="num" value="2">
-        *<label for="Pi">Pi:</label>
-        <input type="float" id="pi" value="3.14">
-        <label for="Radius">Radius:</label>
-        *<input type="float" id="Radius" name="Radius">
-        <label for="Height">Height:</label>
-        *<input type="float" id="Height" name="Height">
-        =<output name="x" for="pi*Radius*Radius"></output>
-        <input type="submit" id="submit" value="Submit" />
-    </form>
-    <hr>
-    <h1>Total Area</h1>
-    <form oninput="x.value=parseFloat(top.value)+(parseFloat(side.value)">
-        <label for="number">Top Area:</label>
-        <input type="float" id="toparea">
-        +<label for="sidearea">Side Area:</label>
-        <input type="float" id="pi">
-        =<output name="x" for="pi*Radius*Radius"></output>
-        <input type="submit" id="submit" value="Submit" />
-    </form>
-    <hr>
-    <h1>Total Area Inches to Square Feet</h1>
-    <form oninput="x.value=parseFloat(totalarea.value)/(parseFloat(numm.value)">
-        <label for="number">Total Area:</label>
-        <input type="float" id="totalarea">
-        /<label for="numm">Number:</label>
-        <input type="float" id="numm" value="144">
-        =<output name="x" for="pi*Radius*Radius"></output>
-        <input type="submit" id="submit" value="Submit" />
-    </form>
-    <hr>
-    <h1>Material Cost</h1>
-    <form oninput="x.value=parseFloat(totalarea.values)/(parseFloat(numm.sqft)">
-        <label for="number">Number:</label value="25">
-        <input type="float" id="totalarea">
-        /<label for="numm">Square Root:</label>
-        <input type="float" id="numm">
-        =<output name="x" for="pi*Radius*Radius"></output>
-        <input type="submit" id="submit" value="Submit" />
-    </form>
-    <hr>
-    <h1>Labor Cost</h1>
-    <form oninput="x.value=parseFloat(totalarea.values)/(parseFloat(numm.sqft)">
-        <label for="number">Number:</label value="15">
-        <input type="float" id="totalarea">
-        /<label for="numm">Square Foot:</label>
-        <input type="float" id="numm">
-        =<output name="x" for="pi*Radius*Radius"></output>
-        <input type="submit" id="submit" value="Submit" />
-    </form>
-    <hr>
-    <h1>Total Price Estimated Cost</h1>
-    <form oninput="x.value=parseFloat(totalarea.values)/(parseFloat(numm.sqft)">
-        <label for="number">Total Material Cost:</label value="25">
-        <input type="float" id="totalarea">
-        +<label for="numm">Total Labor Cost:</label>
-        <input type="float" id="numm">
-        =<output name="x" for="pi*Radius*Radius"></output>
-        <input type="submit" id="submit" value="Submit" />
-    </form>
-    <hr>
-    
+{% if not name %}
+Name is : {{name}}
+{% else %}
+Name is not Defined
+{% endif %}
+<h3>Total cost estimate</h3>
+<h4>Radius : {{radius}} Height : {{height}} is : {{cost_estimate}}</h4>
+<form action="./generate_estimate" method="post">
+    <p><input type="text" name="radius" placeholder="Radius" /></p>
+    <p><input type="text" name="height" placeholder="Height" /></p>
+    <p><input type="submit" value="submit" /></p>
+</form>
 {% endblock %}
