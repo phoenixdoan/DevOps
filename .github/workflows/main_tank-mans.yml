@@ -37,36 +37,12 @@ jobs:
         with:
           name: python-app
           path: |
-            ./app.py
-            ./static
-            ./templates
-            ./requirements.txt 
+            . 
             !venv/
-  test:
-    runs-on: ubuntu-latest
-    needs: build
-    steps:
-      - uses: actions/checkout@v2
-
-      - name: Set up Python version
-        uses: actions/setup-python@v1
-        with:
-          python-version: '3.7'
-
-      - name: Create and start virtual environment
-        run: |
-          python -m venv venv
-          source venv/bin/activate
-      
-      - name: Install dependencies
-        run: pip install -r requirements.txt
-      - name : pytest
-        run : |
-          pytest  
 
   deploy:
     runs-on: ubuntu-latest
-    needs: test
+    needs: build
     environment:
       name: 'Production'
       url: ${{ steps.deploy-to-webapp.outputs.webapp-url }}
@@ -84,4 +60,4 @@ jobs:
         with:
           app-name: 'tank-mans'
           slot-name: 'Production'
-          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_1ADA584779C74E5894A0F76BCADFCBB2 }}
+          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_88F2ED81ED6B4E3F96059A08AD6A4683 }}
